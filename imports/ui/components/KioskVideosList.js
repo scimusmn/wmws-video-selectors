@@ -219,12 +219,12 @@ class KioskVideoList extends React.Component {
             : null
         }
 
+        <HorizontalBreak></HorizontalBreak>
+
         <h1>
           <div className='en'>{this.getTitle()}</div>
           <div className='es'></div>
         </h1>
-
-        <HorizontalBreak></HorizontalBreak>
 
         {videoCards}
 
