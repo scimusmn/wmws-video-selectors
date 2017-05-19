@@ -91,6 +91,7 @@ h2 div.es {
 .component-0607 .video-button {
   background-image: url('/images/pattern-0607.png');
   background-color: #C5CCB7;
+  width: 906px;
 }
 .component-0607 h1 {
   color: #C5CCB7;
@@ -105,6 +106,7 @@ h2 div.es {
 .component-0225 .video-button {
   background-image: url('/images/pattern-0225.png');
   background-color: #D8BB94;
+  width: 351px;
 }
 .component-0225 h1 {
   color: #D8BB94;
@@ -119,9 +121,8 @@ h2 div.es {
   position: absolute;
   background-repeat: repeat-x;
   background-position: bottom;
-  top: 249px;
-  left: 30px;
-  width: 591px;
+  bottom: 0px;
+  left: 0px;
   min-height: 375px;
   transition: all .15s ease-out;
 }
@@ -138,41 +139,42 @@ h2 div.es {
 }
 
 #selection-screen .video-button img {
-  margin: 20px;
-}
-
-#selection-screen .video-02,
-#selection-screen .video-04 {
-  left: 658px;
-}
-
-#selection-screen .video-03,
-#selection-screen .video-06 {
-  left: 1287px;
-}
-
-#selection-screen .video-04,
-#selection-screen .video-05,
-#selection-screen .video-06 {
-  top: 663px;
+  margin: 0px;
+  width: 100%;
 }
 
 /**
- * Rules for kiosks with fewer videos
+ * Layout for 2 video-buttons
  */
-#selection-screen.vid-count-4 .video-03{
-  top: 663px;
+#selection-screen.vid-count-2 .video-01 {
+  left: 34px;
 }
 
-#selection-screen.vid-count-4 .video-01,
-#selection-screen.vid-count-4 .video-03,
-#selection-screen.vid-count-5 .video-04 {
-  left: 349px;
+#selection-screen.vid-count-2 .video-02 {
+  left: 981px;
 }
-#selection-screen.vid-count-4 .video-02,
-#selection-screen.vid-count-4 .video-04,
+
+/**
+ * Layout for 5 video-buttons
+ */
+#selection-screen.vid-count-5 .video-01 {
+  left: 26px;
+}
+
+#selection-screen.vid-count-5 .video-02 {
+  left: 407px;
+}
+
+#selection-screen.vid-count-5 .video-03 {
+  left: 787px;
+}
+
+#selection-screen.vid-count-5 .video-04 {
+  left: 1165px;
+}
+
 #selection-screen.vid-count-5 .video-05 {
-  left: 980px;
+  left: 1541px;
 }
 
 /**
