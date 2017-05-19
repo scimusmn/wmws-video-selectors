@@ -1,0 +1,23 @@
+.DS_Store
+settings-development.json
+settings-production.json
+settings-kiosk.json
+npm-debug.log
+
+node_modules
+
+# Large asset types
+*.mp4
+
+# Component specific media files go here
+# Track the folder for organization, but don't track
+# the media files. We download those with S3.
+public/media/*
+!public/media/.gitkeep
+
+# Don't include fonts
+# We share this repo publically, and while we've licensed copies of the fonts
+# for our usage, we don't have a license to distribute them.
+# We download these with S3.
+public/fonts/*
+!public/fonts/stylesheet.css

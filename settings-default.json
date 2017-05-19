@@ -1,0 +1,10 @@
+{
+  "public": {
+    "screenSaverTimeout": 300,
+    "installPath": "/usr/local/src/sports-coaches-corners"
+  },
+  "private": {
+    "awsLocalBin": "/usr/local/bin/aws",
+    "awsS3MediaDepot": "s3://example"
+  }
+}

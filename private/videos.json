@@ -1,0 +1,42 @@
+[{
+	"_id": "byrr4Y3yqjMj35nCA",
+	"componentNumber": "0100",
+	"labelEn": "Why do you like watching videos?",
+	"labelEs": "¿Por qué es importante una dieta balanceada?",
+	"videoNumber": 1
+},
+{
+	"_id": "rrsC2cAbqnSHN2XJh",
+	"componentNumber": "0100",
+	"labelEn": "What is your basis for video selection?",
+	"labelEs": "¿Qué alimentos son importantes para los atletas?",
+	"videoNumber": 2
+},
+{
+	"_id": "WQXLem8QXNn7nZStM",
+	"componentNumber": "0100",
+	"labelEn": "What will you do after watching these videos?",
+	"labelEs": "¿Qué debo comer antes de una sesión de ejercicio fuerte?",
+	"videoNumber": 3
+},
+{
+	"_id": "7tnqM7kqBnaWA7jhP",
+	"componentNumber": "0200",
+	"labelEn": "What is a video selector?",
+	"labelEs": "¿Qué es una conmoción cerebral?",
+	"videoNumber": 1
+},
+{
+	"_id": "xnNm6feMyivHixWgi",
+	"componentNumber": "0200",
+	"labelEn": "What causes a video to be selected?",
+	"labelEs": "¿Qué causa una conmoción cerebral?",
+	"videoNumber": 2
+},
+{
+	"_id": "cM8rGoNbo8FqARceg",
+	"componentNumber": "0200",
+	"labelEn": "What are the common types of videos?",
+	"labelEs": "¿Cuáles son los síntomas más comunes de una conmoción cerebral?",
+	"videoNumber": 3
+}]
