@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import VideoCard from './VideosCard';
 import VideoPlayer from './VideoPlayer';
 import LoopingBackground from './LoopingBackground';
+import HorizontalBreak from './HorizontalBreak';
 import VideoPlayerScreenSaver from './VideoPlayerScreenSaver';
 import logger from '../../modules/logger';
 import _ from 'lodash';
@@ -96,6 +97,23 @@ class KioskVideoList extends React.Component {
 
   }
 
+  getTitle() {
+
+    let title = 'Video Selector title here...';
+
+    switch (this.props.componentNumber) {
+      case '0607':
+        title = 'Watch videos about Flutes and Jingle dresses';
+        break;
+      case '0225':
+        title = 'Watch videos about Dakota and Ojibwe identity';
+        break;
+    }
+
+    return title;
+
+  }
+
   isActiveCard(index) {
 
     if (index == this.state.selectedPosition) {
@@ -108,7 +126,6 @@ class KioskVideoList extends React.Component {
   launchVideoPlayer(e) {
 
     const position = e.currentTarget.getAttribute('data-position');
-
 
     this.setState({
       playing: true,
@@ -187,9 +204,8 @@ class KioskVideoList extends React.Component {
     );
 
     return (
-      <div onClick={this.resetScreenSaverTimer.bind(this)} key='unique' id='selection-screen' className={'vid-count-' + this.props.videos.length}>
+      <div onClick={this.resetScreenSaverTimer.bind(this)} key='unique' id='selection-screen' className={'vid-count-' + this.props.videos.length + ' component-' + this.props.componentNumber}>
 
-        {/* Background video loop *//* Background video loop */}
         {
             this.loopBackground() === true
             ?
@@ -203,16 +219,15 @@ class KioskVideoList extends React.Component {
             : null
         }
 
-        {/* Coaches Corner headline title *//* Coaches Corner headline title */}
         <h1>
-          <div className='en'>Select a question to learn more.</div>
-          <div className='es'>Elige una pregunta para aprender más.</div>
+          <div className='en'>{this.getTitle()}</div>
+          <div className='es'></div>
         </h1>
 
-        {/* Question buttons *//* Question buttons */}
+        <HorizontalBreak></HorizontalBreak>
+
         {videoCards}
 
-        {/* Modal video player *//* Modal video player */}
         <ReactCSSTransitionGroup
               transitionName='player-fade'
               transitionAppear={false}
@@ -235,7 +250,6 @@ class KioskVideoList extends React.Component {
           }
           </ReactCSSTransitionGroup>
 
-        {/* Modal screen saver *//* Modal screen saver */}
         <ReactCSSTransitionGroup
               transitionName='player-fade'
               transitionAppear={false}
