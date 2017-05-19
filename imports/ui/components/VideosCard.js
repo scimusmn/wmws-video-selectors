@@ -47,7 +47,6 @@ class VideoCard extends React.Component {
         <img src={buttonImagePath}/>
         <h2>
           <div className='en'>{video.labelEn}</div>
-          <div className='es'>{video.labelEs}</div>
         </h2>
       </div>
     );
