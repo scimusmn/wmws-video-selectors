@@ -1,17 +1,17 @@
 [{
-	"_id": "7mLCuiSyHTbTyBS8g",
-	"title": "Example Video Kiosk 01",
-	"componentNumber": "0100",
-  "loopingBackground": false,
-  "transitions": true,
-  "shuffleOnStart": false
+	"_id": "stMCE6ARmCbwFPj4B",
+	"title": "flutes-jingle-dress",
+	"componentNumber": "0607",
+	"loopingBackground": false,
+	"transitions": true,
+	"shuffleOnStart": false
 },
 {
-	"_id": "wrCn4r8RJZWbS7wwd",
-	"title": "Example Video Kiosk 02",
-	"componentNumber": "0200",
-  "loopingBackground": true,
-  "transitions": true,
-  "shuffleOnStart": false
+	"_id": "aLTgpvLsm6wyWWTve",
+	"title": "identity",
+	"componentNumber": "0225",
+	"loopingBackground": false,
+	"transitions": true,
+	"shuffleOnStart": false
 }]
 
