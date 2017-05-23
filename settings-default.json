@@ -1,6 +1,6 @@
 {
   "public": {
-    "screenSaverTimeout": 100,
+    "screenSaverTimeout": 120,
     "installPath": "/usr/local/src/wmws-video-selectors"
   },
   "private": {
