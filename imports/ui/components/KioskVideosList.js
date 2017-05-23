@@ -57,9 +57,9 @@ class KioskVideoList extends React.Component {
         // Log for analytics
         logger.info({message:'inactivity-timeout', inactiveTime:screenSaverTimeout * 1000,});
 
-        // Select random video as screen saver
         if (this.props.randomVideoScreenSaver == true) {
 
+          // Select random video as screen saver
           const rIndex = Math.floor(Math.random() * this.props.videos.length);
           const rPosition = this.videoOrder[rIndex].toString();
 
@@ -170,8 +170,6 @@ class KioskVideoList extends React.Component {
   }
 
   launchVideoPlayer(id, position) {
-
-    console.log('launchVideoPlayer', id, position);
 
     this.setState({
       playing: true,
