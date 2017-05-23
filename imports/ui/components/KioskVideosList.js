@@ -41,14 +41,44 @@ class KioskVideoList extends React.Component {
   }
 
   timerIncrement() {
+
+    // Ignore when video is playing.
+    if (this.state.playing == true) {
+      return;
+    }
+
     const idleTime = this.state.idleTime + 1;
     this.setState({ idleTime });
     const screenSaverTimeout = Meteor.settings.public.screenSaverTimeout;
+
     if (this.state.idleTime >= screenSaverTimeout) {
 
       if (this.state.screenSaver == 'inactive') {
         // Log for analytics
         logger.info({message:'inactivity-timeout', inactiveTime:screenSaverTimeout * 1000,});
+
+        // Select random video as screen saver
+        if (this.props.randomVideoScreenSaver == true) {
+
+          const rIndex = Math.floor(Math.random() * this.props.videos.length);
+          const rPosition = this.videoOrder[rIndex].toString();
+
+          // Format video name
+          const rVideo = 'video-' + _.padStart(this.props.videos[rIndex].videoNumber, 2, '0');
+
+          // Launch fullscreen video player
+          this.launchVideoPlayer(rVideo, rPosition);
+
+          // Reset screensaver count
+          this.resetScreenSaverTimer();
+
+          // Exit before setting screensaver
+          // state. Will play as any
+          // user selected video would.
+          return;
+
+        }
+
       }
 
       this.setState({
@@ -123,24 +153,33 @@ class KioskVideoList extends React.Component {
     }
   }
 
-  launchVideoPlayer(e) {
+  videoButtonSelected(e) {
 
+    const id = e.currentTarget.id;
     const position = e.currentTarget.getAttribute('data-position');
-
-    this.setState({
-      playing: true,
-      selectedVideo: e.currentTarget.id,
-      selectedPosition: position,
-      showVideo: true,
-      transitioning: true,
-    });
 
     // Log for analytics
     logger.info({ message:'video-selected',
                   kiosk: this.props.location.pathname,
-                  selectedVideo:e.currentTarget.id,
-                  position:position,
+                  selectedVideo: id,
+                  position: position,
                   });
+
+    this.launchVideoPlayer(id, position);
+
+  }
+
+  launchVideoPlayer(id, position) {
+
+    console.log('launchVideoPlayer', id, position);
+
+    this.setState({
+      playing: true,
+      selectedVideo: id,
+      selectedPosition: position,
+      showVideo: true,
+      transitioning: true,
+    });
 
     // Wait for transition
     // to kill display state
@@ -194,7 +233,7 @@ class KioskVideoList extends React.Component {
      */
     const videoCards = this.props.videos.map((video, index) =>
       <VideoCard
-        launchVideoPlayer={this.launchVideoPlayer.bind(this)}
+        videoButtonSelected={this.videoButtonSelected.bind(this)}
         playing={this.state.playing}
         key={video._id}
         position={this.videoOrder[index]}
@@ -271,6 +310,7 @@ class KioskVideoList extends React.Component {
             : null
         }
         </ReactCSSTransitionGroup>
+
       </div>
     );
   }

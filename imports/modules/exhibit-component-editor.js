@@ -18,6 +18,7 @@ const handleExhibitComponentUpsert = () => {
     loopingBackground: (document.querySelector('[name="loopingBackground"]').checked),
     transitions: (document.querySelector('[name="transitions"]').checked),
     shuffleOnStart: (document.querySelector('[name="shuffleOnStart"]').checked),
+    randomVideoScreenSaver: (document.querySelector('[name="randomVideoScreenSaver"]').checked),
   };
 
   if (exhibitComponent && exhibitComponent._id) upsert._id = exhibitComponent._id;

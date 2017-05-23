@@ -4,7 +4,8 @@
 	"componentNumber": "0607",
 	"loopingBackground": false,
 	"transitions": true,
-	"shuffleOnStart": false
+	"shuffleOnStart": false,
+	"randomVideoScreenSaver": true
 },
 {
 	"_id": "aLTgpvLsm6wyWWTve",
@@ -12,6 +13,7 @@
 	"componentNumber": "0225",
 	"loopingBackground": false,
 	"transitions": true,
-	"shuffleOnStart": false
+	"shuffleOnStart": false,
+	"randomVideoScreenSaver": true
 }]
 

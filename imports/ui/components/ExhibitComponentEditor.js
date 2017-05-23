@@ -59,6 +59,14 @@ export default class ExhibitComponentEditor extends React.Component {
           defaultChecked={ exhibitComponent && exhibitComponent.shuffleOnStart }
         />
       </FormGroup>
+      <FormGroup>
+        <ControlLabel>Play random video as screen saver</ControlLabel>
+        <FormControl
+          type="checkbox"
+          name="randomVideoScreenSaver"
+          defaultChecked={ exhibitComponent && exhibitComponent.randomVideoScreenSaver }
+        />
+      </FormGroup>
       <Button type="submit" bsStyle="success">
         { exhibitComponent && exhibitComponent._id ? 'Save Changes' : 'Add Exhibit Component' }
       </Button>

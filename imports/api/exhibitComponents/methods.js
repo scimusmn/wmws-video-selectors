@@ -12,6 +12,7 @@ export const upsertExhibitComponent = new ValidatedMethod({
     loopingBackground: { type: Boolean, optional: true },
     transitions: { type: Boolean, optional: true },
     shuffleOnStart: { type: Boolean, optional: true },
+    randomVideoScreenSaver: { type: Boolean, optional: true },
   }).validator(),
   run(document) {
     console.log('run doc', document);

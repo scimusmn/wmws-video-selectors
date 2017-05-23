@@ -18,8 +18,9 @@ const composer = ({ params }, onData) => {
     const loopingBackground = component.loopingBackground;
     const transitions = component.transitions;
     const shuffleOnStart = component.shuffleOnStart;
+    const randomVideoScreenSaver = component.randomVideoScreenSaver;
 
-    onData(null, { videos, playing, componentNumber, loopingBackground, transitions, shuffleOnStart });
+    onData(null, { videos, playing, componentNumber, loopingBackground, transitions, shuffleOnStart, randomVideoScreenSaver });
   }
 };
 

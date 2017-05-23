@@ -41,6 +41,11 @@ ExhibitComponents.schema = new SimpleSchema({
     label: 'Randomize video-card positions on start.',
     defaultValue: false,
   },
+  randomVideoScreenSaver: {
+    type: Boolean,
+    label: 'Display random video instead of Screen Saver.',
+    defaultValue: false,
+  },
 });
 
 ExhibitComponents.attachSchema(ExhibitComponents.schema);
@@ -51,4 +56,5 @@ Factory.define('document', ExhibitComponents, {
   loopingBackground: () => 'Factory Looping Background',
   transitions: () => 'Factory Transitions Bool',
   shuffleOnStart: () => 'Factory Shuffle Bool',
+  randomVideoScreenSaver: () => 'Factory Random ScreenSaver Bool',
 });

@@ -1,7 +1,7 @@
 {
   "public": {
-    "screenSaverTimeout": 300,
-    "installPath": "/usr/local/src/sports-coaches-corners"
+    "screenSaverTimeout": 100,
+    "installPath": "/usr/local/src/wmws-video-selectors"
   },
   "private": {
     "awsLocalBin": "/usr/local/bin/aws",
