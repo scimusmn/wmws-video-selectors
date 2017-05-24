@@ -45,9 +45,11 @@ class VideoCard extends React.Component {
         id={`video-${paddedVideoNumber}`}
       >
         <img src={buttonImagePath}/>
-        <h2>
-          <div className='en'>{video.labelEn}</div>
-        </h2>
+        <div className='label-container'>
+          <h2>
+            <div className='en'>{video.labelEn}</div>
+          </h2>
+        </div>
       </div>
     );
   }

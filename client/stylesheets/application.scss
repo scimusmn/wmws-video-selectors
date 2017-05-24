@@ -54,7 +54,6 @@ h1 div.es {
   font-family: 'museo700', sans-serif;
   line-height: 0px;
   font-size: 32px;
-  /*letter-spacing: 0.01em;*/
 }
 
 h1 div.es {
@@ -69,27 +68,23 @@ h1 div.es {
 /**
  * Selection screen - Video button questions
  */
+
+.video-button .label-container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
 .video-button h2 {
-
-  margin: 30px 60px 0px 60px;
-
+  margin: 0 auto;
+  transform: translateY(-50%);
 }
 
 h2 div.en,
 h2 div.es {
-  font-family: 'museo700', sans-serif;
+  font-family: 'museo300', sans-serif !important;
   color: #000000;
-  line-height: 33px;
-  font-size: 25px;
-  text-align: center;
-}
-
-h2 div.en {
-
-}
-
-h2 div.es {
-
+  line-height: 31px;
+  font-size: 27px;
 }
 
 /**
@@ -106,6 +101,13 @@ h2 div.es {
 .component-0607 h1 {
   color: #C5CCB7;
 }
+.component-0607 .video-button .label-container {
+  height: 120px;
+}
+.component-0607 .video-button h2 {
+  width: 230px;
+  padding-top: 13%;
+}
 
 /**
  * Identities
@@ -119,7 +121,14 @@ h2 div.es {
   width: 352px;
 }
 .component-0225 h1 {
-  color: #D8BB94;
+  color: #d8c6ae;
+}
+.component-0225 .video-button .label-container {
+  height: 120px;
+}
+.component-0225 .video-button h2 {
+  width: 230px;
+  padding-top: 34.5%;
 }
 
 /**
@@ -138,14 +147,12 @@ h2 div.es {
 }
 
 #selection-screen .video-button:active {
-  transform: scale(0.99) translate(0px, 2px);
+  transform: scale(0.99) translate(0px, 3px);
   transition: all .03s ease-out;
-  /*background-color: rgba(44, 44, 44, 0.8);*/
 }
 
 #selection-screen .video-button.active {
-  transform: scale(1.06) translate(0px, -2px);
-  /*background-color: rgba(100, 100, 100, 0.6);*/
+  transform: scale(1.0125) translate(0px, -9px);
 }
 
 #selection-screen .video-button img {

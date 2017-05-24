@@ -157,12 +157,15 @@ class KioskVideoList extends React.Component {
 
     const id = e.currentTarget.id;
     const position = e.currentTarget.getAttribute('data-position');
+    let videoLabel = $(e.currentTarget).find('h2 .en').html();
+    if (videoLabel == '' || videoLabel == undefined) videoLabel = 'NA';
 
     // Log for analytics
     logger.info({ message:'video-selected',
                   kiosk: this.props.location.pathname,
                   selectedVideo: id,
                   position: position,
+                  videoLabel: videoLabel,
                   });
 
     this.launchVideoPlayer(id, position);
