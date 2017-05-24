@@ -1,7 +1,19 @@
 {
   "public": {
-    "screenSaverTimeout": 90,
-    "installPath": "/usr/local/src/wmws-video-selectors"
+    "screenSaverTimeout": 300,
+    "installPath": "/usr/local/src/wmws-video-selectors",
+    "logger": {
+      "projectShortName": "wmws",
+      "componentNum": "0607",
+      "mediaNum": "01",
+      "componentShortName": "wmws-video-selectors",
+      "institution": "smm",
+      "building": "main",
+      "floor": "4",
+      "latitude": "44.94",
+      "longitude": "-93.09",
+      "interface": "touchscreen"
+    }
   },
   "private": {
     "awsLocalBin": "/usr/local/bin/aws",

@@ -33,9 +33,10 @@ if(Meteor.isServer) {
   winston.setLevels(winston.config.npm.levels);
   winston.addColors(winston.config.npm.colors);
 
+  const settings = Meteor.settings.public.logger;
   const folders = process.env.PWD.split('/');
   const projectId = folders[folders.length - 1];
-  const logDirectory = '/usr/local/var/log';
+  const logDirectory = settings.logPath || '/usr/local/var/log';
   const projectDirectory = logDirectory + '/' + projectId;
 
   // Create log directory if it does not exist
@@ -63,6 +64,27 @@ if(Meteor.isServer) {
   });
 
   /*
+   * Tack on all key/values found
+   * in Meteor Settings
+   * before saving to file.
+   */
+  const attachSettings = (data) => {
+
+    if (!settings) return data;
+
+    for (var key in settings) {
+
+        if (!settings.hasOwnProperty(key)) continue;
+
+        data[key] = settings[key];
+
+    }
+
+    return data;
+
+  }
+
+  /*
    * Expose winston log
    * methods to client.
    */
@@ -70,19 +92,19 @@ if(Meteor.isServer) {
 
     logDebug: function(data) {
       check(data, Object);
-      logger.debug(data);
+      logger.debug(attachSettings(data));
     },
     logInfo: function(data) {
       check(data, Object);
-      logger.info(data);
+      logger.info(attachSettings(data));
     },
     logWarn: function(data) {
       check(data, Object);
-      logger.warn(data);
+      logger.warn(attachSettings(data));
     },
     logError: function(data) {
       check(data, Object);
-      logger.error(data);
+      logger.error(attachSettings(data));
     },
 
   });
