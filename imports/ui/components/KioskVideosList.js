@@ -133,10 +133,10 @@ class KioskVideoList extends React.Component {
 
     switch (this.props.componentNumber) {
       case '0607':
-        title = 'Watch videos about Flutes and Jingle dresses';
+        title = 'Touch to select a video.';
         break;
       case '0225':
-        title = 'Watch videos about Dakota and Ojibwe identity';
+        title = 'Touch to select a video.';
         break;
     }
 
