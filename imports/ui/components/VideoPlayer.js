@@ -35,7 +35,7 @@ class VideoPlayer extends React.Component {
           ref='mainVideo'
         >
           <source
-            src={`/media/${this.props.componentNumber}/${selectedVideo()}.mp4`}
+            src={Meteor.settings.public.mediaServer + `/media/${this.props.componentNumber}/${selectedVideo()}.mp4`}
             type='video/mp4'
           />
         </video>

@@ -34,7 +34,7 @@ class VideoCard extends React.Component {
 
     const { video } = this.props;
     const paddedVideoNumber = _.padStart(video.videoNumber, 2, '0');
-    const buttonImagePath = `/media/${video.componentNumber}/${paddedVideoNumber}.png`;
+    const buttonImagePath = Meteor.settings.public.mediaServer + `/media/${video.componentNumber}/${paddedVideoNumber}.png`;
 
     return (
       <div

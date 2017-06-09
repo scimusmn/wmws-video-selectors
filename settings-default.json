@@ -2,6 +2,7 @@
   "public": {
     "screenSaverTimeout": 300,
     "installPath": "/usr/local/src/wmws-video-selectors",
+    "mediaServer": "",
     "logger": {
       "projectShortName": "wmws",
       "componentNum": "0607",
