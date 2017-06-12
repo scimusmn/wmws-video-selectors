@@ -11,7 +11,7 @@ class VideoPlayer extends React.Component {
           autoPlay="autoplay"
         >
           <source
-            src={`/media/${this.props.componentNumber}/ss.mp4`}
+            src={Meteor.settings.public.mediaServer + `/media/${this.props.componentNumber}/ss.mp4`}
             type="video/mp4"
           />
         </video>
