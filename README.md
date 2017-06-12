@@ -21,7 +21,7 @@ files that are tracked in Git.
 If a Meteor project contains large media files, the startup process can become increasingly long as it processes the large files.
 Reduce startup time by moving the media files outside the Meteor project, and using a Node `http-server` instance to serve the files.
 
-Edit the 'mediaServer' value in settings-kiosk.json file.
+Edit the `mediaServer` value in `settings-kiosk.json` file.
 
     "mediaServer": "http://localhost:8080",
 
