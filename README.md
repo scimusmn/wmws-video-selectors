@@ -17,9 +17,9 @@ This will erase everything in your local database and update it with the json
 files that are tracked in Git.
 
 
-## Serving media from external directory
-When a Meteor project contains large media files, the startup process can become increasingly long as it processes the large files.
-Reduce startup time by moving the media files to an external folder, and a Node `http-server` instance to serve the files.
+## Serve media from an external directory
+If a Meteor project contains large media files, the startup process can become increasingly long as it processes the large files.
+Reduce startup time by moving the media files outside the Meteor project, and using a Node `http-server` instance to serve the files.
 
 Edit the 'mediaServer' value in settings-kiosk.json file.
 
@@ -30,9 +30,11 @@ Install `http-server` globally.
     sudo npm install http-server -g
 
 Change directories to an external media folder.
+
     cd /usr/local/src/wmws-media/
 
 Start the http-server on port 8080 in silent mode.
+
     http-server -p 8080 --silent
 
-Your media files will be served from this folder instead of the default /public folder inside your Meteor project.
+Media files will now be served from this folder instead of the default `public` folder inside your Meteor project.
