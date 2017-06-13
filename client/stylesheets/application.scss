@@ -22,6 +22,10 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently not supported by any browser */
+
+  /* Hide cursor */
+  cursor: none !important;
+
 }
 
 .noselect {
@@ -34,6 +38,17 @@ body {
 .NewVideo {
   background-color: #FFF;
   padding: 0 40px 40px 40px;
+}
+
+/**
+ * Disable img ghost drag
+ */
+img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
 }
 
 /**
