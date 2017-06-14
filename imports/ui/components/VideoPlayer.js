@@ -10,6 +10,18 @@ class VideoPlayer extends React.Component {
 
     this.localHomeAction = this.localHomeAction.bind(this);
 
+    const selectedVideo = props.selectedVideo.replace('video-', '') + '.mp4';
+    this.videoSrcPath = Meteor.settings.public.mediaServer + `/media/${props.componentNumber}/${selectedVideo}`;
+
+  }
+
+  componentWillUnmount() {
+
+    // On exit, force the video
+    // to stop loading/buffering.
+    this.videoSrcPath = '';
+    this.refs.mainVideo.src = '';
+
   }
 
   localHomeAction(e) {
@@ -23,7 +35,6 @@ class VideoPlayer extends React.Component {
   }
 
   render() {
-    const selectedVideo = () => this.props.selectedVideo.replace('video-', '') + '.mp4?' + Math.ceil(Math.random() * 999999).toString();
 
     return (
 
@@ -35,7 +46,7 @@ class VideoPlayer extends React.Component {
           ref='mainVideo'
         >
           <source
-            src={Meteor.settings.public.mediaServer + `/media/${this.props.componentNumber}/${selectedVideo()}`}
+            src={this.videoSrcPath}
             type='video/mp4'
           />
         </video>
