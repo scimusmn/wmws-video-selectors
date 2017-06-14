@@ -23,7 +23,7 @@ class VideoPlayer extends React.Component {
   }
 
   render() {
-    const selectedVideo = () => this.props.selectedVideo.replace('video-', '');
+    const selectedVideo = () => this.props.selectedVideo.replace('video-', '') + '.mp4?' + Math.ceil(Math.random() * 999999).toString();
 
     return (
 
@@ -35,7 +35,7 @@ class VideoPlayer extends React.Component {
           ref='mainVideo'
         >
           <source
-            src={Meteor.settings.public.mediaServer + `/media/${this.props.componentNumber}/${selectedVideo()}.mp4`}
+            src={Meteor.settings.public.mediaServer + `/media/${this.props.componentNumber}/${selectedVideo()}`}
             type='video/mp4'
           />
         </video>
